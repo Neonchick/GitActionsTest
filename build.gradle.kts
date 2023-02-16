@@ -2,6 +2,7 @@ plugins {
     java
     id("org.springframework.boot") version "3.0.2"
     id("io.spring.dependency-management") version "1.1.0"
+    id("maven-publish")
 }
 
 group = "com.example"
@@ -19,4 +20,17 @@ dependencies {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/Neonchick/GitActionsTestApplication")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
 }
