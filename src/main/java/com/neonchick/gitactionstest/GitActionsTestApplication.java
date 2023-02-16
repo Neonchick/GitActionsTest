@@ -1,4 +1,4 @@
-package com.example.gitactionstest;
+package com.neonchick.gitactionstest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
