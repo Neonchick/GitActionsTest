@@ -5,16 +5,25 @@ plugins {
     id("maven-publish")
 }
 
-group = "com.example"
-version = "0.0.1-SNAPSHOT"
+group = "com.neonchick"
+version = "0.0.2"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
+    maven {
+        name = "GitHubPackages"
+        url = uri("https://maven.pkg.github.com/Neonchick/GitActionsTestApplication")
+        credentials {
+            username = System.getenv("GITHUB_ACTOR")
+            password = System.getenv("GITHUB_TOKEN")
+        }
+    }
 }
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation(group = "com.neonchick", name = "0.0.2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
