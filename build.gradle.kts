@@ -14,7 +14,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/Neonchik/GitActionsTest")
+            url = uri("https://maven.pkg.github.com/Neonchick/GitActionsTest")
             credentials {
                 username = System.getenv("GITHUB_ACTOR")
                 password = System.getenv("GITHUB_TOKEN")
