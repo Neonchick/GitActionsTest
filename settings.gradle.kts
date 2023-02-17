@@ -1,1 +1,1 @@
-rootProject.name = "GitActionsTest"
+rootProject.name = "github-actions-test"
